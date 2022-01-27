@@ -1,134 +1,133 @@
 body {
-    font-family: 'Quicksand', sans-serif;
-    color: white;
-    font-weight: 300;
+  font-family: "Quicksand", sans-serif;
+  color: white;
+  font-weight: 300;
 }
 
 .searchbar {
-    width: 26%;
-    height: 4%;
-    display: inline-block;
-    margin-left: 5%;
-    font-size: 1em;
-    padding: 0.5em;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 2em;
+  font-size: 1em;
+  padding: 0.5em;
 }
 
-
-input, .submit {
-    background-color: white;
-    border: 0;
-    font-size: 1em;
-    padding: 0.5em;
+input,
+.submit {
+  background-color: white;
+  border: 0;
+  font-size: 1em;
+  padding: 0.5em;
 }
 
-input:focus, .submit:focus {
-    outline: none;
+input:focus,
+.submit:focus {
+  outline: none;
 }
-
 
 .container {
-    background-size: 100%;
-    background-repeat: no-repeat;
+  background-size: 100%;
+  background-repeat: no-repeat;
 
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 2%;
-    max-width: 70%;
-    height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2%;
+  max-width: 70%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .day {
-    background-image: url('./images/day.jpg');
-    background-size: 100% 100%;
+  background-image: url("./images/day.jpg");
+  background-size: 100% 100%;
 }
 
 .night {
-    background-image: url('./images/night.jpg');
-    background-size: 100% 100%;
+  background-image: url("./images/night.jpg");
+  background-size: 100% 100%;
 }
 
 .current-weather {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 6%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6%;
 }
 
 .temperature {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 70%;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 70%;
 }
 
 .temperature span {
-    font-size: 60px;
-    margin-top: 10px;
+  font-size: 60px;
+  margin-top: 10px;
 }
 
 .location {
-    font-size: 20px;
-    margin-bottom: 1%;
+  font-size: 20px;
+  margin-bottom: 1%;
 }
 
 .additional-info {
-    width: 90%;
-    margin: auto;
+  width: 90%;
+  margin: auto;
 }
 
-.additional-first, .additional-second {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.additional-first,
+.additional-second {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.min-max{
-    width: 12%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.min-max {
+  width: 12%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .humidity-wind {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .forecast-container {
-    width: 30%;
+  width: 30%;
 }
 
 .forecast-item {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .forecast-day {
-    width: 34%
+  width: 34%;
 }
 
-
 .forecast-min-max {
-    width: 20%;
-    display: flex;
-    flex: row;
-    justify-content: space-evenly;
+  width: 20%;
+  display: flex;
+  flex: row;
+  justify-content: space-evenly;
 }
 
 .forecast-item img {
-    margin-right: 5%;
+  margin-right: 2em;
 }
 
 .degree-units {
-    cursor: pointer;
+  cursor: pointer;
 }

@@ -3,8 +3,7 @@ import CurrentWeather from "./Components/CurrentWeather";
 import Forecast from "./Components/Forecast";
 import icon from "./images/search.png";
 
-function App() {
-  // const API = "4c38093286011950d828b6caa05f8667";
+const App = () => {
   const API = process.env.REACT_APP_API_KEY;
   const [searchLocation, setSearchLocation] = useState("");
   const [currentWeatherData, setCurrentWeatherData] = useState([]);
@@ -40,18 +39,16 @@ function App() {
       // Fetch the 5 day forecast weather data
       const forecastResponse = await fetch(forecastUrl);
       if (!forecastResponse.ok) {
-        throw new Error('err');
+        throw new Error("err");
       }
       const forecastData = await forecastResponse.json();
       setForecastData(forecastData.list);
-
-
     } catch (err) {
       console.log(err);
       // If user submits an invalid location, keep previous state
       setCurrentWeatherData((prevData) => prevData);
     }
-  }
+  };
 
   // Get weather data from one of the provided locations in the array
   // after first render
@@ -155,6 +152,6 @@ function App() {
       />
     </div>
   );
-}
+};
 
 export default App;
