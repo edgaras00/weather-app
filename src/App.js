@@ -130,26 +130,31 @@ const App = () => {
   }
 
   return (
-    <div className={`container ${timeClass}`}>
-      <div className="searchbar">
-        <input
-          type="text"
-          placeholder="City"
-          name="searchLocation"
-          value={searchLocation}
-          onChange={handleChange}
-          onKeyDown={handleKeyDown}
+    <div className="app">
+      <div className={`weather-container ${timeClass}`}>
+        <div className="searchbar">
+          <input
+            type="text"
+            placeholder="City"
+            name="searchLocation"
+            value={searchLocation}
+            onChange={handleChange}
+            onKeyDown={handleKeyDown}
+          />
+          <button
+            onClick={() => handleSubmit(searchLocation)}
+            className="submit"
+          >
+            <img src={icon} width="14px" height="13px" alt="search" />
+          </button>
+        </div>
+        {weatherComponents}
+        <Forecast
+          data={forecastData}
+          time={currentWeatherData[0].dt}
+          timezone={currentWeatherData[0].timezone}
         />
-        <button onClick={() => handleSubmit(searchLocation)} className="submit">
-          <img src={icon} width="14px" height="13px" alt="search" />
-        </button>
       </div>
-      {weatherComponents}
-      <Forecast
-        data={forecastData}
-        time={currentWeatherData[0].dt}
-        timezone={currentWeatherData[0].timezone}
-      />
     </div>
   );
 };
