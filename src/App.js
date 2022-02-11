@@ -53,25 +53,8 @@ const App = () => {
   // Get weather data from one of the provided locations in the array
   // after first render
   useEffect(() => {
-    // Array of locations
-    const cities = [
-      "New+York",
-      "Los+Angeles",
-      "Sydney",
-      "Miami",
-      "London",
-      "Paris",
-      "Moscow",
-      "Tokyo",
-      "Seoul",
-      "Beijing",
-      "Hong Kong",
-      "Toronto",
-      "Vilnius",
-      "Klaipeda",
-    ];
     // Pick a random location from the array
-    const queryCity = cities[Math.floor(Math.random() * cities.length)];
+    const queryCity = "New+York";
     // Fetch the weather data for selected location
     fetchData(queryCity, API);
   }, [API]);
