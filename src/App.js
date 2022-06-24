@@ -12,37 +12,17 @@ const App = () => {
 
   const fetchData = async (location, apiKey) => {
     try {
-      let baseUrl = "http://api.openweathermap.org/data/2.5/";
-      // Current weather API endpoint
-      let weatherApi = `weather?q=${location}&units=imperial&appid=${apiKey}`;
-      // Weather forecast API endpoint
-      let forecastApi = `forecast?q=${location}&units=imperial&appid=${apiKey}`;
-      // Complete URL to call API
-      const weatherUrl = baseUrl + weatherApi;
-      const forecastUrl = baseUrl + forecastApi;
-
-      // Fetch current weather data
-      const response = await fetch(weatherUrl);
+      const response = await fetch(
+        `http://localhost:5000/api/weather?location=${location}`
+      );
       if (!response.ok) {
         alert("Location not found. Please enter a valid location name.");
         throw new Error("err");
       }
       const data = await response.json();
-      // Convert the UNIX time to selected location's current date
-      // and time
-      const date = new Date((data.dt + data.timezone) * 1000);
-      // Set the hour state by extracting hours from the current date
-      setHour(date.getUTCHours());
-      // Set current weather data state
-      setCurrentWeatherData([data]);
-
-      // Fetch the 5 day forecast weather data
-      const forecastResponse = await fetch(forecastUrl);
-      if (!forecastResponse.ok) {
-        throw new Error("err");
-      }
-      const forecastData = await forecastResponse.json();
-      setForecastData(forecastData.list);
+      setHour(data.hour);
+      setCurrentWeatherData([data.weatherData]);
+      setForecastData(data.forecastData);
     } catch (err) {
       console.log(err);
       // If user submits an invalid location, keep previous state
