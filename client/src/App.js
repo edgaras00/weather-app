@@ -13,7 +13,8 @@ const App = () => {
   const fetchData = async (location, apiKey) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/weather?location=${location}`
+        // `http://localhost:5000/api/weather?location=${location}`
+        `https://weather-app42.herokuapp.com/api/weather?location=${location}`
       );
       if (!response.ok) {
         alert("Location not found. Please enter a valid location name.");
