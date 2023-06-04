@@ -3,6 +3,7 @@ https://weather-ba98.onrender.com/
 <br/>
 <br/>
 <img src="docs/main.png" width="700px">
+<br/>
 Front end application that shows weather forecast.
 <br/>
 <br/>
