@@ -39,7 +39,7 @@ const App = () => {
     const queryCity = "New+York";
     // Fetch the weather data for selected location
     fetchData(queryCity);
-  }, [API]);
+  }, []);
 
   // Function to handle user's location input
   // Set searchLocation state as the input value
@@ -51,14 +51,14 @@ const App = () => {
   // Function to submit user's query by clicking the search icon
   const handleSubmit = (location) => {
     // submitSearch(weatherUrl, forecastUrl);
-    fetchData(location, API);
+    fetchData(location);
   };
 
   // Function to submit user's query by pressing the Return key
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
       // submitSearch(weatherUrl, forecastUrl);
-      fetchData(searchLocation, API);
+      fetchData(searchLocation);
     }
   };
 
