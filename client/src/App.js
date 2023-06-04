@@ -13,7 +13,7 @@ const App = () => {
 
   const fetchData = async (location) => {
     try {
-      let url = `https://weather-api.onrender.com/api/weather?location=${location}`;
+      let url = `https://weather-api-p66g.onrender.com/api/weather?location=${location}`;
       if (process.env.REACT_APP_ENV === "development") {
         url = `/api/weather?location=${location}`;
       }
