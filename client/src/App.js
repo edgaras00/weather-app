@@ -4,18 +4,19 @@ import Forecast from "./Components/Forecast";
 import icon from "./images/search.png";
 
 const App = () => {
-  const API = process.env.REACT_APP_API_KEY;
   const [searchLocation, setSearchLocation] = useState("");
   const [currentWeatherData, setCurrentWeatherData] = useState([]);
   const [forecastData, setForecastData] = useState([]);
   const [hour, setHour] = useState(null);
 
-  const fetchData = async (location, apiKey) => {
+  const fetchData = async (location) => {
     try {
-      const response = await fetch(
-        // `http://localhost:5000/api/weather?location=${location}`
-        `https://weather-app42.herokuapp.com/api/weather?location=${location}`
-      );
+      let url = `https://weather-api.onrender.com/api/weather?location=${location}`;
+      if (process.env.REACT_APP_ENV === "development") {
+        url = `/api/weather?location=${location}`;
+      }
+      const response = await fetch(url);
+
       if (!response.ok) {
         alert("Location not found. Please enter a valid location name.");
         throw new Error("err");
@@ -37,7 +38,7 @@ const App = () => {
     // Pick a random location from the array
     const queryCity = "New+York";
     // Fetch the weather data for selected location
-    fetchData(queryCity, API);
+    fetchData(queryCity);
   }, [API]);
 
   // Function to handle user's location input
