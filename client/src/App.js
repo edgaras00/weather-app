@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+
 import CurrentWeather from "./Components/CurrentWeather";
 import Forecast from "./Components/Forecast";
+
 import icon from "./images/search.png";
 
 const App = () => {
